@@ -2,9 +2,9 @@ import 'package:asocial/page_1.dart';
 import 'package:asocial/page_2.dart';
 import 'package:asocial/page_3.dart';
 import 'package:asocial/page_4.dart';
-import 'package:asocial/verification_screen.dart';
 import 'package:easy_stepper/easy_stepper.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class NameScreen extends StatefulWidget {
   const NameScreen({super.key});
@@ -37,8 +37,8 @@ class _NameScreenState extends State<NameScreen> {
                 Padding(
                   padding: const EdgeInsets.only(top: 50, left: 20),
                   child: Container(
-                    width: 45,
-                    height: 45,
+                    width: 45.w,
+                    height: 45.h,
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(10),
@@ -63,7 +63,7 @@ class _NameScreenState extends State<NameScreen> {
                       defaultLineColor: Colors.white,
                       lineSpace: 3,
                       lineType: LineType.dashed),
-                  stepRadius: 25,
+                  stepRadius: 25.r,
                   steps: [
                     EasyStep(
                       customStep: CircleAvatar(

@@ -1,6 +1,4 @@
-import 'dart:async';
 
-import 'package:asocial/splash_screen.dart';
 import 'package:asocial/try_for_free.dart';
 import 'package:asocial/verification_screen.dart';
 import 'package:flutter/material.dart';
