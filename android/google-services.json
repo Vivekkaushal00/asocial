@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "496782780474",
+    "project_id": "asocial-f5a06",
+    "storage_bucket": "asocial-f5a06.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496782780474:android:686f3af7b151d361dfed03",
+        "android_client_info": {
+          "package_name": "com.example.asocial"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "496782780474-0vsi7hbor6hf4ot7v13rfvjs0senspgl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.asocial",
+            "certificate_hash": "720fc9e4fda79f48e187fd501e785d52bc6c4d44"
+          }
+        },
+        {
+          "client_id": "496782780474-6mjlau7fpegsso4la6q4jaasmq5c69do.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8IjvFgfZ_6VYkiysh6hp0Y5sHprYBERQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496782780474-6mjlau7fpegsso4la6q4jaasmq5c69do.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "496782780474-89bkg6fa10vm1ls5u896jmnatgohdt5v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.asocial"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

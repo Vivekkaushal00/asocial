@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "496782780474",
+    "project_id": "asocial-f5a06",
+    "storage_bucket": "asocial-f5a06.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496782780474:android:686f3af7b151d361dfed03",
+        "android_client_info": {
+          "package_name": "com.example.asocial"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8IjvFgfZ_6VYkiysh6hp0Y5sHprYBERQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

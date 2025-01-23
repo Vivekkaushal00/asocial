@@ -1,3 +1,5 @@
+import 'package:asocial/view/onboarding_screens/login_screen.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 
@@ -10,6 +12,17 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   bool status = false;
+
+  // Google Sign Out  //
+  Future<bool> signOutFromGoogle() async {
+    try{
+      await FirebaseAuth.instance.signOut();
+      return true;
+    } catch(_) {
+      return false;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,8 +150,11 @@ class _ProfileState extends State<Profile> {
             ],
           ),
           SizedBox(height: 50),
-          Padding(
-            padding: const EdgeInsets.only(top: 200),
+          GestureDetector(
+            onTap: (){
+              signOutFromGoogle();
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginScreen(),));
+            },
             child: Container(
               width: double.maxFinite,
               height: 60,

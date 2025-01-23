@@ -1,6 +1,6 @@
 import 'package:asocial/chat_history.dart';
 import 'package:asocial/friends.dart';
-import 'package:asocial/login_screen.dart';
+import 'package:asocial/view/onboarding_screens/login_screen.dart';
 import 'package:asocial/messages.dart';
 import 'package:asocial/profile.dart';
 import 'package:asocial/sent_Request1.dart';

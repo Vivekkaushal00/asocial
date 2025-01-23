@@ -1,5 +1,5 @@
 import 'package:asocial/account_created.dart';
-import 'package:asocial/login_screen.dart';
+import 'package:asocial/view/onboarding_screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 class TryForFree extends StatefulWidget {
