@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+    <string name="app_name">asocial</string>
+    <string name="facebook_app_id">1165162438569847</string>
+    <string name="fb_login_protocol_scheme">fb1165162438569847</string>
+    <string name="facebook_client_token">b9db27cb6da782c3660e8be75aad611d</string>
+
+
+</resources>

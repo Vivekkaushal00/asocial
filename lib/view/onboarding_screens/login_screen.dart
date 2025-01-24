@@ -1,6 +1,3 @@
-import 'dart:io';
-
-import 'package:asocial/home.dart';
 import 'package:asocial/try_for_free.dart';
 import 'package:asocial/view/onboarding_screens/name_screen.dart';
 import 'package:asocial/view/onboarding_screens/verification_screen.dart';
@@ -9,6 +6,7 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,6 +17,7 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   bool valuefirst = false;
+  bool isSignedIn = false;
 
   // Google Sign in  //
   Future<dynamic> signInWithGoogle() async {
@@ -53,6 +52,12 @@ class _LoginScreenState extends State<LoginScreen> {
     }
   }
 
+  // Facebook Sign in  //
+  Future<UserCredential> signInWithFacebook() async {
+    final LoginResult loginResult = await FacebookAuth.instance.login();
+    final OAuthCredential facebookAuthCredential = FacebookAuthProvider.credential('${loginResult.accessToken?.tokenString}');
+    return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -282,40 +287,44 @@ class _LoginScreenState extends State<LoginScreen> {
                                     ),
                                   ],
                                 ),
-                                Column(
-                                  children: [
-                                    Container(
-                                      width: 50,
-                                      height: 50,
-                                      decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(100),
-                                          boxShadow: const [
-                                            BoxShadow(
-                                              offset: Offset(0, 8),
-                                              blurRadius: 5,
-                                              color: Colors.black12,
-                                            ),
-                                          ]),
-                                      child: const Icon(
-                                        Icons.facebook_rounded,
-                                        size: 45,
-                                        color: Color(0xFF4285F4),
+                                GestureDetector(
+                                  onTap: () {
+                                    signInWithFacebook();
+                                  },
+                                  child: Column(
+                                    children: [
+                                      Container(
+                                        width: 50,
+                                        height: 50,
+                                        decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(100),
+                                            boxShadow: const [
+                                              BoxShadow(
+                                                offset: Offset(0, 8),
+                                                blurRadius: 5,
+                                                color: Colors.black12,
+                                              ),
+                                            ]),
+                                        child: const Icon(
+                                          Icons.facebook_rounded,
+                                          size: 45,
+                                          color: Color(0xFF4285F4),
+                                        ),
                                       ),
-                                    ),
-                                    const SizedBox(height: 10),
-                                    const Text(
-                                      'Facebook',
-                                      style: TextStyle(
-                                          fontWeight: FontWeight.w500),
-                                    ),
-                                  ],
+                                      const SizedBox(height: 10),
+                                      const Text(
+                                        'Facebook',
+                                        style: TextStyle(
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                                 GestureDetector(
                                   onTap: () {
                                     signInWithGoogle();
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NameScreen(),));
                                   },
                                   child: Column(
                                     children: [
